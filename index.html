@@ -19,16 +19,9 @@
       <aside id="aside"></aside>
       
       <div id="main">
-        <div>
-            <input type="search" placeholder="Search for movies"/>
-        </div>
-
+        <div id="search-container"></div>
         <div id="carousel"></div>
       </div>
-
-      
-
-      
     </div>
 
     <script>
@@ -43,6 +36,7 @@
       window.onload = async function () {
         await loadPage("aside.html", "aside");
         await loadPage("carousel.html", "carousel");
+        await loadPage('search.html', "search-container");
 
         animateCarousel();
       };

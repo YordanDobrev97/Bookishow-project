@@ -1,0 +1,19 @@
+#search-container {
+  padding: 8px;
+  background-color: #333545;
+  position: relative;
+}
+
+#search-input {
+  padding: 15px;
+  width: 30%;
+  border: none;
+  border-radius: 18px;
+  padding-right: 25px;
+}
+
+#search-container i {
+  position: relative;
+  right: 45px;
+  font-size: 1.2em;
+}

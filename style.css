@@ -1,21 +1,24 @@
-@import url('./fonts/Antic-Regular.ttf');
-@import url('aside.css');
-@import url('carousel.css');
+@import url("./fonts/Antic-Regular.ttf");
+@import url("aside.css");
+@import url("carousel.css");
+@import url("search.css");
 
-html, body, * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Antic', sans-serif;
+  font-family: "Antic", sans-serif;
 }
 
 #container {
-    display: flex;
+  display: flex;
 }
 
 #main {
-    width: 100%;
+  width: 100%;
 }
