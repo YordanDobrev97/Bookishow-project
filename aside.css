@@ -1,0 +1,60 @@
+#aside {
+    width: 15%;
+    height: 100vh;
+    background: #1F2533;
+}
+
+#aside-top {
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    background-color: #4c5367;
+    width: 100%;
+}
+
+#aside-title {
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#aside-logo {
+    width: 2.5em;
+}
+
+#main-menu, #extra-menu {
+    padding: 20px;
+    color: white;
+}
+
+.menu-item {
+    list-style-type: none;
+    font-size: 1.3em;
+    margin-bottom: 16px;
+}
+
+.menu-item span {
+    margin: 0 8px;
+}
+
+@media screen and (max-width: 600px) {
+    #aside {
+        width: 30% !important;
+    }
+
+    #aside-top {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em;
+    }
+
+    #aside-title {
+        font-size: 0.8em;
+    }
+
+    #main-menu, #extra-menu {
+        padding: 10px;
+        text-align: center;
+    }
+}

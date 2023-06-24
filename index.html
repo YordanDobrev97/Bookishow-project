@@ -1,64 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookishow</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <link rel="icon" type="image/x-icon" href="./assets/icons8-movie-16.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <!-- aside section -->
-    <aside id="aside">
-        <section id="aside-top">
-            <img src="./assets/Martz90-Circle-Video-camera.512.png" id="aside-logo"/>
-            <h1 id="aside-title">Bookishow</h1>
-        </section>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/icons8-movie-16.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <aside id="aside"></aside>
+      <div id="carousel"></div>
+    </div>
 
-        <section id="aside-menu">
-            <ul id="main-menu">
-                <li class="menu-item">
-                    <i class="fa-solid fa-film"></i>
-                    <span>Movies</span>
-                </li>
-                <li class="menu-item">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <span>Events</span>
-                </li>
-                <li class="menu-item">
-                    <i class="fa-solid fa-people-group"></i>
-                    <span>People</span>
-                </li>
-                <li class="menu-item">
-                    <i class="fa-solid fa-medal"></i>
-                    <span>Sports</span>
-                </li>
-            </ul>
+    <script>
+      function loadPage(page, element) {
+        return fetch(page)
+          .then((r) => r.text())
+          .then((data) => {
+            document.getElementById(element).innerHTML = data;
+          });
+      }
 
-            <hr id="dividing-line"/>
+      window.onload = async function () {
+        await loadPage("aside.html", "aside");
+        await loadPage("carousel.html", "carousel");
 
-            <ul id="extra-menu">
-                <li class="menu-item">
-                    <i class="fa-solid fa-pager"></i>
-                    <span>Pages</span>
-                </li>
-                <li class="menu-item">
-                    <i class="fa-solid fa-fire"></i>
-                    <span>Offerts</span>
-                </li>
-                <li class="menu-item">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <span>Extra Pages</span>
-                </li>
-            </ul>
-        </section>
-    </aside>
+        animateCarousel();
+      };
 
-    <!-- end aside section -->
+      function animateCarousel() {
+        let index = 0;
+        const carouselItems = document.querySelectorAll(".carousel-item");
 
-
-
-    
-</body>
+        setInterval(() => {
+            carouselItems[index].classList.remove("visible");
+            if (index == 2) {
+                index = -1
+            }
+            carouselItems[index + 1].classList.add("visible");
+            index++;
+        }, 4500);
+      }
+    </script>
+  </body>
 </html>
