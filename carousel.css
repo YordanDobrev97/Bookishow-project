@@ -29,4 +29,8 @@
     img {
         height: 50%;
     }
+
+    .carousel-item img {
+        height: 290px;
+    }
 }
