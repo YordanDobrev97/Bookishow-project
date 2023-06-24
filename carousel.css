@@ -4,12 +4,13 @@
 }
 
 #carousel-container {
-    width: 100%;
-    height: 75%;
-    margin-top: 0px;
+    width: 88%;
+    height: 80%;
+    margin: 70px auto 0 auto;
 }
 
 .carousel-item {
+    width: 100%;
     display: none;
     width: inherit;
     height: inherit;
@@ -19,9 +20,9 @@
     display: block;
 }
 
- img {
+.carousel-item img {
     width: 100%;
-    height: 100%;
+    height: 400px;
 }
 
 @media screen and (max-width: 600px) {
